@@ -1,41 +1,31 @@
-class Solver 
+# frozen_string_literal: true
 
+# main class
+class Solver
   def factorial(number)
+    return 'Error' if number.negative?
 
-    if number < 0
-      return 'Error'
-    end
-
-    if number == 0
-      return 1
+    if number.zero?
+      1
 
     else
-      return number * factorial(number - 1)
+      number * factorial(number - 1)
     end
   end
 
   def reverse(string)
-    if string.length == 1
-      return string
-    end
+    return string if string.length == 1
 
-    return string[-1] + reverse(string[0..-2])
+    string[-1] + reverse(string[0..-2])
   end
 
   def fizzbuzz(number)
+    return 'fizzbuzz' if (number % 15).zero?
 
-    if number % 15 == 0
-      return 'fizzbuzz'
-    end
+    return 'fizz' if (number % 3).zero?
 
-    if number % 3 == 0
-      return 'fizz'
-    end
+    return 'buzz' if (number % 5).zero?
 
-    if number % 5 == 0
-      return 'buzz'
-    end
-
-    return number.to_s
-  end 
+    number.to_s
+  end
 end
