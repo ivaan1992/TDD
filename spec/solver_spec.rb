@@ -45,5 +45,23 @@ describe Solver do
             expect(Solver.new.factorial(5)).to eq(120)
         end
     end
+
+    context 'Reverse' do
+        it 'returns the same string when given a string of length 1' do
+            expect(Solver.new.reverse('a')).to eq('a')
+        end
+
+        it 'returns the reversed string when given a string' do
+            expect(Solver.new.reverse('abc')).to eq('cba')
+        end
+
+        it 'returns the reversed word when given a word' do
+            expect(Solver.new.reverse('ruby')).to eq('ybur')
+        end
+
+        it 'returns the reversed phrase when given a phrase' do
+            expect(Solver.new.reverse('hello world')).to eq('dlrow olleh')
+        end
+    end
 end
 
