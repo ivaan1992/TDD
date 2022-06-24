@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# main class
 class Solver
   def factorial(number)
     return 'Error' if number.negative?
