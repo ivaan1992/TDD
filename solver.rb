@@ -15,6 +15,11 @@ class Solver
   end
 
   def reverse(string)
+    if string.length == 1
+      return string
+    end
+
+    return string[-1] + reverse(string[0..-2])
   end
 
   def fizzbuzz(number)
