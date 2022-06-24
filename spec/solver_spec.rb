@@ -63,5 +63,23 @@ describe Solver do
             expect(Solver.new.reverse('hello world')).to eq('dlrow olleh')
         end
     end
+
+    context 'Fizzbuzz' do
+        it 'returns fizz when given a number divisible by 3' do
+            expect(Solver.new.fizzbuzz(3)).to eq('fizz')
+        end
+
+        it 'returns buzz when given a number divisible by 5' do
+            expect(Solver.new.fizzbuzz(5)).to eq('buzz')
+        end
+
+        it 'returns fizzbuzz when given a number divisible by 3 and 5' do
+            expect(Solver.new.fizzbuzz(15)).to eq('fizzbuzz')
+        end
+
+        it 'returns the number in string when given a number not divisible by 3 or 5' do
+            expect(Solver.new.fizzbuzz(1)).to eq("1")
+        end
+    end
 end
 
